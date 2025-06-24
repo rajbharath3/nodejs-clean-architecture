@@ -7,7 +7,7 @@ class UserHandler {
 
     async createUser(req, res) {
         try {
-            const user = await this.userService.createUser({ name: 'Bharath', email: 'bharath@gmail.com' });
+            const user = await this.userService.createUser(req.body);
             res.status(201).json(user);
         } catch (err) {
             res.status(400).json({ error: err.message });
